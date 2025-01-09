@@ -1,0 +1,39 @@
+.main {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.left {
+    width: 20%;
+    background-color: var(--gray);
+}
+
+.left a {
+    color: var(--white);
+}
+
+.left a:hover {
+    font-style: italic;
+    color: var(--gold);
+}
+
+.left li {
+    height: 3rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--white);
+}
+
+.left li:hover,
+.active {
+    font-style: italic;
+    color: var(--gold);
+    background-color: var(--darkbrown);
+}
+
+#topic td {
+    width: 25% !important;
+}
+
+.right {
+    width: 80%;
+}

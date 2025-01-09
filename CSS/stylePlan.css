@@ -1,0 +1,151 @@
+table {
+    font-size: 1rem;
+}
+
+#img1 {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#t1,
+.data_1 input {
+    border-radius: 10px;
+    background-color: transparent;
+    padding-left: 1rem;
+}
+
+#t1:hover,
+.data_1 input:hover {
+    border-style: solid;
+    border-color: var(--red);
+}
+
+#s1,
+#s2 {
+    cursor: pointer;
+}
+
+.at {
+    text-decoration: none;
+}
+
+#menu1 {
+    background-color: #ACD6FF;
+    width: 37.5rem;
+    height: 2.18rem;
+    text-align: center;
+}
+
+#menu1 tr td:hover,
+#menu1 tr a:hover {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+#s3,
+#s4,
+#s5,
+#s6 {
+    border: none;
+    background-color: transparent;
+    width: 7.5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+}
+
+#s3:hover,
+#s4:hover,
+#s5:hover,
+#s6:hover {
+    cursor: pointer;
+}
+
+/* 表格內設定 */
+#dvtop {
+    margin-top: 1rem;
+    width: 80%;
+    height: 9.375rem;
+}
+
+#dvtop img {
+    width: 100%;
+    height: 9.375rem;
+}
+
+/* 報表 */
+#menu1,
+#databs {
+    width: 80%;
+}
+
+.data_1 {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data_1 label {
+    width: 30%;
+    text-align: start;
+}
+
+.data_1 input {
+    width: 50%;
+}
+
+.data_2 {
+    display: inline-flex;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+#menu1 table {
+    width: 100%;
+    height: 2.18rem;
+}
+
+/* 主要內容 */
+#dv1 {
+    width: 80%;
+    height: 12.5rem;
+    overflow-y: scroll;
+    background-color: #CCF;
+}
+
+#dv1 table {
+    width: 100%;
+}
+
+#dv1 td {
+    text-align: center;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+#topic td {
+    width: 3.25rem;
+}
+
+#topic td:last-child {
+    width: 15.625rem;
+}
+
+/* 按鈕 */
+#crud {
+    width: 70%;
+}
+
+#crud td {
+    text-align: center;
+}
+
+/* 設定中銀幕以下 */
+@media (max-width: 1100px) {
+    .data_1 label {
+        width: 15%;
+    }
+
+    .data_1 input {
+        width: 75%;
+    }
+}

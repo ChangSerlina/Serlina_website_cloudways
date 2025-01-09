@@ -1,0 +1,131 @@
+<div class="topRight a" id="a_nav">
+    <a class="active" title="首頁">首頁</a>
+    <a href="attraction.php" title="旅遊景點">旅遊景點</a>
+    <a href="basicdb.php" title="旅遊規劃">旅遊規劃</a>
+    <a href="furrykids.php" title="毛小孩">毛小孩</a>
+    <!-- <a href="Shop.html" title="商店">商店</a> -->
+    <a href="parking.php" title="停車費查詢">停車費查詢</a>
+    <a href="contact.php" title="聯絡我們">聯絡我們</a>
+</div>
+
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img src="images/Icon/menu.png" alt="選單" width="70%">
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Home自己的樣式 -->
+<link rel="stylesheet" href="CSS/styleHome.css">
+
+<!-- header end -->
+<h4 class="visitors">訪客人數：{{visitors}}</h4><br>
+
+<!-- banner-Carousel start -->
+<!-- 自動播放 -->
+<div id="carousel-img" class="carousel slide banner" data-bs-ride="carousel">
+    <!-- 圖片下方指示器 -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel-img" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carousel-img" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carousel-img" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carousel-img" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carousel-img" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    </div>
+
+    <!-- 圖片區 -->
+    <!-- >768px以上建議放的圖片大小為1280 x 500 px -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="images/home/h1.jpg" class="d-block" alt="Singapore 新加坡 榴槤 濱海藝術中心 早上 白天">
+            <div class="carousel-caption d-md-block">
+                <h3>新加坡 濱海藝術中心</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/home/h2.jpg" class="d-block" alt="Singapore 新加坡 榴槤 濱海藝術中心 晚上 黑夜">
+            <div class="carousel-caption d-md-block">
+                <h3>新加坡 濱海藝術中心</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/home/h3.jpg" class="d-block" alt="Malaysia 馬來西亞 樂高樂園">
+            <div class="carousel-caption d-md-block">
+                <h3>馬來西亞 樂高樂園</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/home/h4.jpg" class="d-block" alt="Malaysia 馬來西亞 布城首相府">
+            <div class="carousel-caption d-md-block">
+                <h3>馬來西亞 布城首相府</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/home/h5.jpg" class="d-block" alt="Malaysia 馬來西亞 布城清真寺">
+            <div class="carousel-caption d-md-block">
+                <h3>馬來西亞 布城清真寺</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- 上一張圖片按鈕 -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-img" data-bs-slide="prev">
+        <span aria-hidden="true"><img src="images/home/carousel/pre.png" alt="上一張圖片按鈕"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <!-- 下一張圖片按鈕 -->
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-img" data-bs-slide="next">
+        <span aria-hidden="true"><img src="images/home/carousel/next.png" alt="下一張圖片按鈕"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- banner-Carousel end -->
+
+<!-- content start -->
+<!-- 內文圖片可以放528x300px -->
+<div id="container">
+    <div class="row home1">
+        <div class="content col-5 col-lg-12 col-sm-12">
+            <div class="img">
+                <img src="images/Country/malaysia_2019.jpg" alt="Malaysia 馬來西亞 樂高樂園" width="500px" height="300px">
+            </div>
+            <div class="text">
+                <!-- 內文可以放85個字 -->
+                <p>
+                    馬來西亞的樂高樂園。在每一個區域都有其獨特的主題，包括城堡、太空、冒險等，每個主題都展現了樂高積木的多樣應用和創意設計。漫步於城堡區域，仿佛進入了一個樂高童話王國...
+                </p>
+                <button title="旅遊景點" class="more"><a href="attraction.php">點我查看更多 → </a></button>
+            </div>
+        </div>
+        <div class="content col-5 col-lg-12 col-sm-12">
+            <div class="img">
+                <img src="images/Country/camping_2023.jpg" alt="Taiwan Tainan Yujing 台灣 台南 玉井" width="500px"
+                    height="300px">
+            </div>
+            <div class="text">
+                <p>
+                    玉井露營提供了多樣的戶外活動，最令人難忘的是和家人朋友共度的歡笑時光，這趟玉井露營之旅不僅滿足了我的自然探險慾望，更讓我與親友之間的情誼更為深厚。
+                </p>
+                <button title="旅遊景點" class="more"><a href="attraction.php">點我查看更多 → </a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 下方圖片區 -->
+<div class="pictures">
+    <a href="leo.php" title="點擊前往Leo的頁面"><img class="pic" src="images/Puppy/Leo/L3.jpg" alt="兔子 bunny rabbit Leo"
+            width="200px" height="200px"></a>
+    <a href="cat.php" title="點擊前往點點的頁面"><img class="pic" src="images/Puppy/點點/cat06.jpg" alt="貓咪 cat 點點" width="200px"
+            height="200px"></a>
+    <a href="wei.php" title="點擊前往薇薇的頁面"><img class="pic" src="images/Puppy/薇薇/w2-1.jpg" alt="狗狗 dog 薇薇" width="200px"
+            height="200px"></a>
+    <a href="south.php" title="點擊前往南極的頁面"><img class="pic" src="images/Puppy/南極/N1-1.jpg" alt="狗狗 dog 南極" width="200px"
+            height="200px"></a>
+    <a href="ann.php" title="點擊前往安安的頁面"><img class="pic" src="images/Puppy/安安/ann9.jpg" alt="狗狗 dog 安安" width="200px"
+            height="200px"></a>
+    <a href="leo.php" title="點擊前往Leo的頁面"><img class="pic" src="images/Puppy/Leo/L2-1.jpg" alt="兔子 bunny rabbit Leo"
+            width="200px" height="200px"></a>
+</div>
+<!-- content end -->

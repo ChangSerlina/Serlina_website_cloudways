@@ -1,0 +1,90 @@
+<!-- 浮動按鈕 -->
+<span id="Gotop"><span>&uarr;</span><a href="#top" title="回到最上方">Go to top</a></span>
+
+<!-- footer -->
+<div id="footer">
+    <div id="footercontent" class="row">
+        <div class="col-1">
+            <a href="#" title="回首頁"><img src="images/logo.png" alt="serlina 榕軒的網站" width="70rem" height="70rem"></a>
+        </div>
+        <div class="col-10 conInfo">
+            <h2>Contact information</h2>
+            <div class="icon">
+                <a href="mailto:serlina0504@gmail.com" title="點擊寄送電子郵件"><i class="fa-solid fa-envelope"></i></a>
+                <span>&nbsp;&nbsp;電子郵件:&nbsp;&nbsp;</span><a href="mailto:serlina0504@gmail.com"
+                    title="點擊寄送電子郵件">serlina0504@gmail.com</a>
+            </div>
+            <small id="copy">CopyRight &copy; <span id="currentYear"></span> Serlina All Rights Reserved. | 版權所有，翻拷必究
+            </small>
+        </div>
+    </div>
+    <div class="Go_top">
+        <span id="Gotop"><span>&uarr;</span><a href="#top" title="回到最上方">Go to top</a></span>
+    </div>
+</div>
+
+<!-- 上方的Modal-會員註冊 -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="memberForm" action="register.html" target="goToRegister">
+                    <div class="sign_1">
+                        <label class="form-label">電子郵件: </label>
+                        <input type="email" class="form-control" id="email2" aria-describedby="emailHelp"
+                            placeholder="請輸入您的電子郵件，例如:123@gmail.com" name="email2" title="請輸入您的電子郵件">
+                        <div id="emailHelp" class="state">※我們絕對不會與其他人分享您的電子郵件。</div>
+                    </div>
+                    <div class="sign_1" id="sign_1">
+                        <label class="form-label">密碼: </label>
+                        <input type="password" class="form-control" id="pwd" placeholder="請輸入您的6~12位數密碼" name="pwd"
+                            title="請輸入您的密碼"><i id="checkEye" class="fa fa-eye"></i>
+                    </div>
+                    <div class="row" id="signup">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn" title="註冊" onclick="register()">註冊</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn" title="登入" onclick="login2()">登入</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-12 col-sm-12">
+                    <div id="login"></div>
+                    <div id="register">
+                        <iframe name="goToRegister"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //顯示or隱藏密碼
+    var checkEye = document.getElementById('checkEye');
+    var passwd = document.getElementById('pwd');
+    // console.log(passwd);
+
+    checkEye.addEventListener("mousedown", function (e) {
+        // 換icon 的 class type
+        e.target.classList.remove("fa-eye");
+        e.target.classList.add("fa-eye-slash");
+        passwd.setAttribute("type", "text");
+
+        checkEye.addEventListener("mouseup", function up(e) {
+            // 換icon 的 class type
+            passwd.setAttribute("type", "password");
+            e.target.classList.remove("fa-eye-slash");
+            e.target.classList.add("fa-eye");
+        });
+    });
+</script>
+
+</body>
+
+</html>

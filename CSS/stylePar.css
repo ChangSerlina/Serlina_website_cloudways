@@ -1,0 +1,86 @@
+.carCont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    padding: 0 10px;
+}
+
+.carLeft,
+.carRight {
+    background-color: var(--white);
+    border: 1px solid var(--darkbrown);
+    border-radius: 1rem;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.carCont h2 {
+    font-weight: bold;
+    box-shadow: 0 5px 9px -7px;
+    margin-bottom: 1rem;
+    padding-bottom: 3px;
+}
+
+.car {
+    margin-bottom: 2rem;
+    height: 2rem;
+}
+
+.carLeft {
+    background-image: url(../images/parking.png);
+    background-repeat: no-repeat;
+    background-position: 96% 96%;
+}
+
+.carLeft p,
+.carLeft label,
+.carLeft input,
+.carLeft select{
+    height: 2rem;
+    line-height: 2rem;
+    text-align: start;
+    border-radius: 10px;
+}
+
+.carLeft input,
+.carLeft select{
+    padding: 0 0.625rem;
+}
+
+.carLeft form {
+    padding-bottom: 1rem;
+    margin-top: 4rem;
+    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carLeft button {
+    box-shadow: 0px 5px 0 0px var(--shadow);
+    background-color: var(--darkbrown);
+    padding: 0.6rem;
+    border-radius: 5px;
+    margin: 2px auto;
+    border: none;
+    height: 2rem;
+    color: var(--white);
+}
+
+.carLeft button:hover {
+    margin-top: 0;
+    height: 2rem;
+    line-height: 1.5rem;
+    background-color: var(--h_darkbrown);
+    color: var(--white);
+}
+
+.carRight {
+    background-image: url(../images/parking-result.png);
+    background-repeat: no-repeat;
+    background-position: 96% 20%;
+}
+
+.captcha{
+    height: 140%;
+}

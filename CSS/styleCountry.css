@@ -1,0 +1,100 @@
+.country {
+    width: 90%;
+    height: 100vh;
+    margin: 2rem auto 0;
+    background-image: url(../images/Country/page.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* 當大銀幕的時候隱藏導覽 */
+.nav_row2 {
+    display: none;
+}
+
+/* 當小銀幕的時候隱藏left，顯示導覽 */
+@media (max-width: 1000px) {
+    .left {
+        display: none;
+    }
+
+    .nav_row2 {
+        margin: 0.6rem auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* 內文左邊 */
+.left {
+    position: relative;
+    top: 2rem;
+    left: 10rem;
+}
+
+.left li {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    text-align: start;
+}
+
+/* 內文右邊 */
+.right {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    top: -2rem;
+    right: 10rem;
+}
+
+.right a {
+    background-color: lightseagreen;
+    color: white;
+    border: 1px black solid;
+    margin-right: 5px;
+}
+
+.right div {
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.right img {
+    width: 100%;
+    height: 35%;
+    margin-bottom: 1rem;
+}
+
+.right p {
+    line-height: 2rem;
+    text-align: justify;
+}
+
+/* 當小銀幕的時候內文右邊，改變位置 */
+@media (max-width: 1000px) {
+    .right {
+        left: 13%;
+    }
+
+    .nav {
+        --bs-nav-link-padding-x: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+.myActive {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--darkbrown) !important;
+    border-bottom: 2px solid var(--darkbrown) !important;
+}
+
+.myActive a {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--darkbrown) !important;
+}

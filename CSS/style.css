@@ -1,0 +1,631 @@
+/* 變數宣告 */
+:root {
+    --white: #ffffffff;
+    --black: #000000ff;
+    --gray: rgb(70, 66, 66);
+    --silver: #C7CFD9ff;
+    --blue: #50B4BFff;
+    --lightblue: #84D0D9ff;
+    --pink: #FA00FFff;
+    --gold: #FFD700ff;
+    --brown: #BF9780ff;
+    --darkbrown: #8C5C4Aff;
+    --h_darkbrown: rgb(228, 135, 64);
+    --red: #ff0000;
+    --shadow: rgb(121, 82, 52);
+    --green: #3cb371ff;
+    --darkblue: #5547D6ff;
+}
+
+/* 先進行歸零設定 */
+body,
+h1,
+h2,
+ul,
+li,
+p,
+b,
+div,
+table,
+span {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: normal;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gray);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.topRight .active {
+    font-style: italic;
+    color: var(--darkbrown);
+    border-bottom: 3px solid var(--darkbrown);
+}
+
+a:link a:visited {
+    color: var(--black);
+}
+
+img {
+    border: none;
+    vertical-align: bottom;
+}
+
+/* 全域設定 */
+* {
+    box-sizing: border-box;
+}
+
+/* 內容設定 */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    background: var(--lightblue);
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.1875rem;
+}
+
+button {
+    border: none !important;
+}
+
+/* 設定header */
+#header {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 12px 9px -7px;
+    margin-bottom: 1.25rem;
+}
+
+.topnav {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    justify-items: end;
+    padding-top: 1rem;
+    overflow: visible;
+}
+
+.topnav h2 a:hover {
+    text-decoration: none;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.topRight {
+    display: flex;
+    justify-content: end;
+    height: 2.1875rem;
+}
+
+/* 設定搜尋方框 */
+.search {
+    width: 80%;
+    height: 2.1875rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formSearch {
+    display: block;
+    width: 45%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.search .btn {
+    border: none;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+/* 設定主選單 */
+.topRight a {
+    width: 20%;
+    float: left;
+    display: block;
+    justify-items: end;
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.topnav a:hover {
+    font-style: italic;
+    color: var(--darkbrown);
+    border-bottom: 2px solid var(--darkbrown);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* 設定會員按鈕 */
+.topnav ul {
+    display: none;
+}
+
+/* 將 memberList 的位置相對設定 */
+#memberList {
+    position: relative;
+    width: 20%;
+    padding: 0;
+    background-color: forestgreen;
+}
+
+/* 讓 listitem 絕對定位 */
+#memberList ul {
+    position: absolute;
+    top: 100%;
+    display: none;
+    /* 預設隱藏 */
+}
+
+#memberList a {
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: black;
+    width: 100%;
+    display: block;
+}
+
+#memberList a:hover {
+    font-style: italic;
+    color: var(--gold);
+    background-color: var(--darkbrown);
+}
+
+/* 當顯示時，讓列表出現 */
+#memberList.show ul {
+    display: block;
+    left: 0;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+#memberButton {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1000px) {
+    .topnav .a {
+        display: none;
+    }
+
+    .topnav a.icon {
+        position: absolute;
+        right: 0rem;
+        top: 1rem;
+        display: block;
+    }
+
+
+    .topnav.responsive {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0rem;
+        top: 1rem;
+    }
+
+    .topnav.responsive.topRight img {
+        width: 70%;
+    }
+
+    .topnav.responsive i {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .topnav.responsive a {
+        clear: both;
+    }
+
+    #a_nav a,
+    #search a,
+    #memberList,
+    #memberList button {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+    }
+
+    #memberList ul li {
+        padding: 10px;
+        border: none;
+    }
+
+    #memberList a {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+/* 設定麵包屑路徑 container_nav */
+.container_nav {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 1.2rem;
+}
+
+.nav_row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--silver);
+}
+
+.container_nav p {
+    float: left;
+    color: var(--darkbrown);
+}
+
+.container_nav .sub_nav {
+    float: left;
+    margin-right: 0;
+}
+
+.sub_nav {
+    margin: 0.6rem auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container_nav li {
+    float: left;
+    padding: 5px 10px;
+}
+
+.container_nav a {
+    color: var(--darkbrown);
+}
+
+.container_nav a:hover {
+    color: var(--black);
+}
+
+
+/* 設定footer */
+#footer {
+    width: 100%;
+    clear: both;
+    position: absolute;
+    background-color: var(--gray);
+    color: var(--white);
+    padding: 1.25rem 0;
+    font-size: 0.75rem;
+    display: flex;
+}
+
+#footer a {
+    color: var(--white);
+}
+
+#footer .icon {
+    padding: 0.625rem;
+    font-size: 1rem;
+}
+
+.envelope {
+    width: 1rem;
+    height: 1rem;
+}
+
+#footercontent {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.conInfo {
+    padding-right: 15%;
+}
+
+#copy {
+    padding-bottom: 1.25rem;
+}
+
+.Go_top {
+    padding-right: 1.25rem;
+}
+
+/* 設定go to top按鈕 */
+
+#Gotop {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--blue);
+    color: var(--gold);
+    float: right;
+    position: sticky;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 1rem;
+}
+
+#Gotop span {
+    display: block;
+    font-size: 2em;
+}
+
+#Gotop a {
+    color: var(--gold);
+}
+
+/* 對話框的會員登入設定 */
+.modal-content {
+    display: flex;
+    text-align: justify;
+}
+
+.sign_1 {
+    margin-bottom: 1rem;
+}
+
+.sign_1 input {
+    cursor: pointer;
+}
+
+#sign_1 {
+    position: relative;
+}
+
+.state {
+    margin-top: 0.25rem;
+    font-size: 0.7rem;
+    color: var(--black);
+}
+
+#login,
+#register {
+    margin-top: 1rem;
+    display: none;
+}
+
+#register iframe {
+    width: 100%;
+}
+
+#signup button {
+    background-color: gray !important;
+    color: white !important;
+    width: 90%;
+}
+
+#signup button:hover {
+    background-color: lightseagreen !important;
+    color: blue !important;
+}
+
+/* 顯示密碼icon */
+#checkEye {
+    position: absolute;
+    top: 56%;
+    right: 15px;
+}
+
+/* 設定row */
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 設定RWD-col */
+.col {
+    flex: 100%;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* 設定小銀幕的col */
+@media (max-width: 1000px) {
+    .col-sm {
+        flex: 100%;
+    }
+
+    .col-sm-1 {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+    }
+
+    .col-sm-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+
+    .col-sm-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+
+    .col-sm-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+    }
+
+    .col-sm-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+    }
+
+    .col-sm-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+
+    .col-sm-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+
+    .col-sm-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+/* 設定中銀幕的col */
+@media (max-width: 1100px) {
+    .col-lg {
+        flex: 100%;
+    }
+
+    .col-lg-1 {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+    }
+
+    .col-lg-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+
+    .col-lg-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+    }
+
+    .col-lg-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .col-lg-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+    }
+
+    .col-lg-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+
+    .col-lg-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+
+    .col-lg-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+
+    .col-lg-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+    }
+
+    .col-lg-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}

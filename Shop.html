@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Serlina, serlina0504@gmail.com">
+    <meta name="keyword" content="serlina, 網站">
+    <meta name="description" content="Serlina(榕軒)的網站">
+    <title>榕軒的網站</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <!-- Icon 來源-->
+    <script src="https://kit.fontawesome.com/a720f5b186.js" crossorigin="anonymous"></script>
+
+    <!-- BS CDN links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 全部頁面的樣式 -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- 本頁面的樣式 -->
+    <link rel="stylesheet" href="">
+
+    <!-- 我的js -->
+    <script src="js/serlina.js"></script>
+    <!-- 登入js -->
+    <script src="js/login.js"></script>
+</head>
+
+<body id="top">
+    <!-- header start -->
+    <div id="header">
+        <div class="topnav" id="topnav">
+            <div class="row">
+                <div class="col-1">
+                    <h1><a href="index.php" title="回首頁"><img src="images/logo.png" alt="榕軒的網站 Serlina" width="80rem"
+                                height="80rem"></a>
+                    </h1>
+                </div>
+                <div class="col-2 col-sm-8" id="title">
+                    <h2><a href="index.php" title="首頁">家の幸福</a></h2>
+                </div>
+                <div class="headcontainer col-8" id="headcontainer">
+                    <div class="topRight a" title="搜尋" id="search">
+                        <form class="search" role="search" action="https://www.google.com/search" target="_blank">
+                            <input class="formSearch" type="search" placeholder="搜尋..." name="q">
+                            <button class="btn" type="submit"><img src="images/Icon/glass.svg" alt="搜尋"></button>
+                        </form>
+                        <!-- 會員註冊 -->
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            title="註冊/登入">註冊/登入</a>
+                    </div>
+                    <div class="topRight a" id="a_nav">
+                        <a href="index.php" title="首頁">首頁</a>
+                        <a href="attraction.php" title="旅遊景點">旅遊景點</a>
+                        <a href="furrykids.php" title="毛小孩">毛小孩</a>
+                        <a class="active" title="商店">商店</a>
+                        <a href="parking.php" title="停車費查詢">停車費查詢</a>
+                        <a href="contact.php" title="聯絡我們">聯絡我們</a>
+                    </div>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <img src="images/Icon/menu.png" alt="選單" width="70%">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+
+    <!-- 內容區 -->
+    <!-- 麵包屑 -->
+    <div class="container_nav">
+        <div class="nav_row">
+            <div class="col-2 col-sm-12">
+                <p><a href="index.php" title="回首頁">首頁</a> / 商店</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 浮動按鈕 -->
+    <span id="Gotop"><span>&uarr;</span><a href="#top" title="回到最上方">Go to top</a></span>
+
+    <!-- footer -->
+    <div id="footer">
+        <div id="footercontent" class="row">
+            <div class="col-1">
+                <a href="#" title="回首頁"><img src="images/logo.png" alt="serlina 榕軒的網站" width="70rem" height="70rem"></a>
+            </div>
+            <div class="col-10 conInfo">
+                <h2>Contact information</h2>
+                <div class="icon">
+                    <a href="mailto:serlina0504@gmail.com" title="點擊寄送電子郵件"><i class="fa-solid fa-envelope"></i></a>
+                    <span>&nbsp;&nbsp;電子郵件:&nbsp;&nbsp;</span><a href="mailto:serlina0504@gmail.com"
+                        title="點擊寄送電子郵件">serlina0504@gmail.com</a>
+                </div>
+                <small id="copy">CopyRight &copy; <span id="currentYear"></span> Serlina All Rights Reserved. | 版權所有，翻拷必究 </small>
+            </div>
+            <span id="Gotop"><span>&uarr;</span><a href="#top" title="回到最上方">Go to top</a></span>
+        </div>
+    </div>
+
+    <!-- 上方的Modal-會員註冊 -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">會員註冊</h1>
+                    <h3>----此功能尚在開發測試中----</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="signup.html" target="signupok">
+                        <div class="sign_1">
+                            <label class="form-label">電子郵件: </label>
+                            <input type="email" class="form-control" id="email2" aria-describedby="emailHelp"
+                                placeholder="請輸入您的電子郵件，例如:123@gmail.com" name="email2" title="請輸入您的電子郵件">
+                            <div id="emailHelp" class="state">※我們絕對不會與其他人分享您的電子郵件。</div>
+                        </div>
+                        <div class="sign_1">
+                            <label class="form-label">密碼: </label>
+                            <input type="password" class="form-control" id="pwd" placeholder="請輸入您的6~8位數密碼" name="pwd"
+                                title="請輸入您的密碼">
+                        </div>
+                        <div class="row" id="signup">
+                            <div class="col-sm-6">
+                                <button type="submit" class="btn" title="註冊" onclick="register()">註冊</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn" title="登入" onclick="login2()">登入</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-12 col-sm-12">
+                        <div id="login"></div>
+                        <div id="register">
+                            <iframe name="signupok"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

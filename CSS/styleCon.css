@@ -1,0 +1,91 @@
+.content {
+    display: flex;
+    justify-content: center;
+    font-family: "Noto Serif TC";
+}
+
+.contentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact {
+    padding-top: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-item {
+    display: flex;
+    align-items: center;
+}
+
+.form-item .left,
+.form-item .right {
+    border-bottom: 2px solid var(--black);
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-item .right {
+    width: 100%;
+}
+
+.form-item label {
+    width: 6.25rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#contact input {
+    border: none;
+    background-color: transparent;
+}
+
+.inputStyle {
+    width: 100%;
+    height: 2.75rem;
+}
+
+.form-item:first-child .right {
+    width: 70%;
+}
+
+.gender {
+    padding-left: 1rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender span {
+    padding: 0 5px;
+}
+
+.question .left {
+    border-bottom: none;
+}
+
+.text {
+    height: 30vh;
+}
+
+.text textarea {
+    border: none;
+    border-bottom: 2px solid var(--black);
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.conBtn {
+    margin-top: 1rem;
+    padding: 0.6rem;
+    float: left;
+    border: none;
+    background-color: var(--gray);
+    color: var(--white);
+}

@@ -1,0 +1,160 @@
+<!-- 本頁面的樣式 -->
+<link rel="stylesheet" href="CSS/stylePar.css">
+
+<!-- 頁簽/選單 -->
+<div class="topRight a" id="a_nav">
+    <a href="index.php" title="首頁">首頁</a>
+    <a href="attraction.php" title="旅遊景點">旅遊景點</a>
+    <a href="basicdb.php" title="旅遊規劃">旅遊規劃</a>
+    <a href="furrykids.php" title="毛小孩">毛小孩</a>
+    <!-- <a href="Shop.html" title="商店">商店</a> -->
+    <a class="active" title="停車費查詢">停車費查詢</a>
+    <a href="contact.php" title="聯絡我們">聯絡我們</a>
+</div>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img src="images/Icon/menu.png" alt="選單" width="70%">
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- header end -->
+
+<!-- 內容區 -->
+<!-- 麵包屑 -->
+<div class="container_nav">
+    <div class="nav_row">
+        <div class="col-2 col-sm-12">
+            <p><a href="index.php" title="回首頁">首頁</a> / 停車費查詢</p>
+        </div>
+    </div>
+</div>
+
+<!-- 停車費查詢 -->
+<div class="carCont">
+    <div class="carLeft col-5 col-sm-12">
+        <h2>停車繳費查詢</h2>
+        <p>請輸入車牌號碼，查詢未繳之停車繳費單:<br>
+            (輸入範例：ABC-5678或123-ABC)
+        </p><br>
+
+        <form target="carcheck" method="post" action="carcheck.php" id="parkForm">
+            <div class="col-11 col-sm-11 car">
+                <label for="number">*車牌號碼: </label>
+                <input type="text" title="車牌號碼" placeholder="請輸入您的車牌號碼" id="carid" name="carid" required>
+            </div>
+            <div class="col-11 col-sm-11 car">
+                <label for="location">*縣市:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select name="location" id="location">
+                    <option value="">請選擇查詢縣市</option>
+                    <option value="Keelung">基隆市</option>
+                    <option value="Taipei">台北市</option>
+                    <option value="NewTaipei">新北市</option>
+                    <option value="Taoyuan">桃園市</option>
+                    <option value="Hsinchu">新竹市</option>
+                    <option value="Hsinchu_s">新竹縣</option>
+                    <option value="Taichung">台中市</option>
+                    <option value="Changhua">彰化縣</option>
+                    <option value="Chiayi">嘉義市</option>
+                    <option value="Tainan">台南市</option>
+                    <option value="Kaohsiung">高雄市</option>
+                    <option value="Pingtung">屏東縣</option>
+                    <option value="Taitung">台東縣</option>
+                </select>
+            </div>
+            <div class="col-11 col-sm-11 car">
+                <label for="cars">*車種:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select name="cartype" id="cartype">
+                    <option value="">請選擇車種</option>
+                    <option value="C">汽車</option>
+                    <option value="M">機車</option>
+                </select>
+            </div>
+            <div class="col-12 col-sm-11 car">
+                <p>*驗證碼: <input id="captchaText" name="captchaText" type="text" title="驗證碼"
+                        placeholder="請輸入驗證碼 不區分大小寫">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="captcha"
+                        class="captcha" src="captcha_check.php?action=getcaptcha" alt="captcha">
+                    <input type="button" value="更換圖片" onclick="refreshImage()">
+                </p>
+            </div>
+            <br><br><br><br><br><br>
+            <div class="car">
+                <button id="parkSubmit" type="button" onclick="parking()" title="確定送出">
+                    確定送出</button>
+                <button type="button" title="清除" onclick="clearForm()">
+                    清除</button>
+            </div>
+        </form>
+    </div>
+    <!-- 送出查詢後的結果，預設隱藏 -->
+    <div class="carRight col-5 col-sm-12" id="carResult" style="display: none">
+        <h2>查詢結果</h2>
+        <iframe name="carcheck" height="100%" width="100%"></iframe>
+    </div>
+</div>
+
+<!-- 相關連結 -->
+<div class="ref">
+    <h3>相關連結</h3>
+</div>
+
+<script>
+    function parking() {
+        var location = $('#location').val();
+        var cartype = $('#cartype').val();
+        var captchaText = $('#captchaText').val();
+
+        if (location == "") {
+            alert("請選擇欲查詢縣市");
+            $('#location').focus();
+            return false;
+        }
+
+        if (cartype == "") {
+            alert("請選擇汽/機車");
+            $('#cartype').focus();
+            return false;
+        }
+
+        if (captchaText == "") {
+            alert("請輸入驗證碼");
+            refreshImage();
+            $('#captchaText').focus();
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "captcha_check.php?action=checkcaptcha",
+            data: "check=" + captchaText,
+            success: function (response) {
+                if (response.trim() == "pass") {
+                    // 如果驗證成功，手動提交表單
+                    $('#parkForm').submit();
+
+                    $('#carResult').css("display", "block");
+                    refreshImage();
+                    $('#captchaText').val("");
+                } else {
+                    alert("驗證碼輸入錯誤");
+                    refreshImage();
+                    $('#captchaText').val("");
+                    $('#captchaText').focus();
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('AJAX Error: ' + status + error);
+            }
+        });
+    }
+
+    function clearForm() {
+        document.getElementById("parkForm").reset();
+    }
+
+    function refreshImage() {
+        // 生成一個隨機的查詢字符串，以便重新加載圖像
+        var img = document.getElementById('captcha');
+        img.src = 'captcha_check.php?action=getcaptcha&' + new Date().getTime();
+    }
+</script>

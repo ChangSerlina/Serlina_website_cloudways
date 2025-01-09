@@ -1,0 +1,59 @@
+<!-- 本頁面的樣式 -->
+<link rel="stylesheet" href="CSS/stylePlan.css">
+
+<!-- 本頁面的js -->
+<script src="js/plan.js"></script>
+
+<!-- nav bar -->
+<div class="topRight a" id="a_nav">
+    <a href="index.php" title="首頁">首頁</a>
+    <a href="attraction.php" title="旅遊景點">旅遊景點</a>
+    <a class="active" title="旅遊規劃">旅遊規劃</a>
+    <a href="furrykids.php" title="毛小孩">毛小孩</a>
+    <!-- <a href="Shop.html" title="商店">商店</a> -->
+    <a href="parking.php" title="停車費查詢">停車費查詢</a>
+    <a href="contact.php" title="聯絡我們">聯絡我們</a>
+</div>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img src="images/Icon/menu.png" alt="選單" width="70%">
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- header end -->
+
+<!-- 內容區 -->
+<!-- 麵包屑 -->
+<div class="container_nav">
+    <div class="nav_row">
+        <div class="col-2 col-sm-12">
+            <p><a href="index.php" title="回首頁">首頁</a> / 旅遊規劃</p>
+        </div>
+    </div>
+</div>
+
+<!-- 內文 -->
+<center> <!--可以直接讓版面置中-->
+    <form method="post" action="basicdb.php">
+        <div id="dvtop">
+            <img src="images/header.jpg" id="img1" />
+        </div>
+        <div id="menu1">
+            <table border="0">
+                <tr>
+                    <td><a href="javascript:void;" class="at" onclick="rfun1()">行程報表</a></td>
+                    <td><a href="javascript:void;" class="at" onclick="rfun2()">出發點報表</a></td>
+                    <td><a href="javascript:void;" class="at" onclick="rfun3()">目的地報表</a></td>
+                    <td><a href="javascript:void;" class="at" onclick="rfun4()">天數報表</a></td>
+                    <td><a href="javascript:void;" class="at" onclick="rfun5()">區間報表</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="dv1">
+            <table border="2">
+                <tr>
+                    <td colspan="5" bgcolor="#99CCFF">旅遊規劃</td>
+                </tr>
+                <!-- topic start -->
+                <tr id="topic">

@@ -1,0 +1,21 @@
+<!-- 會員按鈕 -->
+<div id="memberList" onclick="memberButton()" >
+    <button type="button" id="memberButton">
+        Hi~ {{user}}
+    </button>
+    <ul>
+        <a href="memberInfo.php?uuid={{uuid}}" title="會員資料">
+            <li class="listitem">會員資料</li>
+        </a>
+        <a href="adminPage.php" title="管理頁面">
+            <li class="listitem">管理頁面</li>
+        </a>
+        <a href="adminPage.php" title="管理頁面">
+            <li class="listitem">管理頁面</li>
+        </a>
+    </ul>
+</div>
+
+<!-- 登出 -->
+<a href="member_action.php?action=logout" title="登出">登出</a>
+</div>

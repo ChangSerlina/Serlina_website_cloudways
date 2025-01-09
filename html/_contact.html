@@ -1,0 +1,89 @@
+<!-- 本頁面的樣式 -->
+<link rel="stylesheet" href="CSS/styleCon.css">
+
+<!-- 頁簽/選單 -->
+<div class="topRight a" id="a_nav">
+    <a href="index.php" title="首頁">首頁</a>
+    <a href="attraction.php" title="旅遊景點">旅遊景點</a>
+    <a href="basicdb.php" title="旅遊規劃">旅遊規劃</a>
+    <a href="furrykids.php" title="毛小孩">毛小孩</a>
+    <!-- <a href="Shop.html" title="商店">商店</a> -->
+    <a href="parking.php" title="停車費查詢">停車費查詢</a>
+    <a class="active" title="聯絡我們">聯絡我們</a>
+</div>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img src="images/Icon/menu.png" alt="選單" width="70%">
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- header end -->
+
+<!-- 內容區 -->
+<!-- 麵包屑 -->
+<div class="container_nav">
+    <div class="nav_row">
+        <div class="col-2 col-sm-12">
+            <p><a href="index.php" title="回首頁">首頁</a> / 聯絡我們</p>
+        </div>
+    </div>
+</div>
+
+<!-- 聯絡表格start -->
+<div class="content">
+    <div class="contentBox col-11">
+        <h3>Contact Form</h3>
+        <p>請留下您的問題，我們會盡快與您聯絡!</p>
+
+        <form action="contact_action.php" method="post" id="contact" class="col-7 col-sm-12">
+            <div class="form-item">
+                <div class="left">
+                    <label for="name">*姓名: </label>
+                </div>
+
+                <div class="right">
+                    <input type="text" name="name" id="name" class="inputStyle" title="請輸入您的姓名" required />
+                </div>
+
+                <div class="gender">
+                    <input type="radio" value="0" name="gender" checked><span>男</span>
+                    <input type="radio" value="1" name="gender"><span>女</span>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="left">
+                    <label for="tel">&nbsp;&nbsp;電話: </label>
+                </div>
+
+                <div class="right">
+                    <input type="tel" name="tel" id="tel" class="inputStyle" title="請輸入您的連絡電話"
+                        placeholder="0912345678" />
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="left">
+                    <label for="email">*電子郵件: </label>
+                </div>
+
+                <div class="right">
+                    <input type="email" name="email" id="email" class="inputStyle" title="請輸入您的電子郵件"
+                        placeholder="123@gmail.com" required />
+                </div>
+            </div>
+            <div class="form-item question">
+                <div class="left">
+                    <label for="question">*問題內容: </label>
+                </div>
+            </div>
+            <div class="text">
+                <textarea name="question" id="question" cols="30" rows="10" title="請輸入您的問題"
+                    placeholder="請在此輸入您的問題，我們將盡快回覆您，謝謝。" required></textarea>
+            </div>
+            <button type="submit" class="conBtn">確認送出</button>
+        </form>
+    </div>
+</div>
+<!-- 聯絡表格end -->

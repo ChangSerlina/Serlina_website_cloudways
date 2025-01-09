@@ -1,0 +1,70 @@
+/* 圖片輸送帶設定 start */
+.banner,
+#container {
+    width: 100%;
+    margin: 0 auto 0.75rem;
+    overflow: hidden;
+}
+
+.carousel-caption h3 {
+    font-style: italic;
+}
+
+#carousel .active {
+    border-bottom: none;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: flex;
+    justify-content: center;
+}
+
+/* 圖片輸送帶設定 end */
+
+/* content start */
+.home1{
+    display: flex;
+    justify-content: center;
+}
+.content {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.text {
+    width: 70%;
+    margin-top: 1rem;
+}
+
+.text p {
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.more {
+    float: right;
+    margin-top: 5px;
+    background-color: transparent;
+}
+
+.more a {
+    color: var(--darkbrown);
+    font-weight: bold;
+}
+
+.pictures {
+    margin: 1rem auto;
+}
+.pic{
+    padding: 5px;
+}
+
+.visitors{
+    float: right;
+    margin-right: 1%;
+}

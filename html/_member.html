@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Serlina, serlina0504@gmail.com">
+    <meta name="keyword" content="serlina, 網站">
+    <meta name="description" content="Serlina(榕軒)的網站">
+    <title>會員資料登錄</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- Icon 來源-->
+    <script src="https://kit.fontawesome.com/a720f5b186.js" crossorigin="anonymous"></script>
+
+    <!-- BS CDN links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery CDN links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- 登入js -->
+    <script src="js/login.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-flex;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .member {
+            width: 80%;
+            padding: 5px;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form div {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .member label {
+            padding-right: 1rem;
+        }
+
+        .member input,
+        .member select {
+            cursor: pointer;
+        }
+
+        .name_input,
+        .birthday input,
+        .edu {
+            width: 80%;
+            padding: .375rem .75rem;
+            border-radius: 1rem;
+            border: 1px solid black;
+        }
+
+        .birthday {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .check {
+            display: inline-block;
+        }
+
+        .check input {
+            border: 1px solid black;
+            width: 1rem;
+        }
+
+        .btn {
+            background-color: gray;
+            color: white;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: lightseagreen;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="member">
+        <h1 style="font-weight: bold;">會員資料</h1>
+        <div>
+            <form method="post" id="memberDetailForm">
+                <div class="name">
+                    <label>* 姓名:</label>
+                    <input type="text" class="name_input" name="userName" id="userName" placeholder="王曉明" required>
+                </div>
+                <div class="birthday">
+                    <label>生日:</label>
+                    <input type="date" name="birthday" id="birthday">
+                </div>
+                <div>
+                    <label>性別:</label>
+                    <div class="check">
+                        <input type="radio" name="gender" id="gender_M" value="0" checked>
+                        <span>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                男
+                            </label>
+                        </span>
+                    </div>
+                    <div class="check">
+                        <input type="radio" name="gender" id="gender_F" value="1">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            女
+                        </label>
+                    </div>
+                    <div class="check">
+                        <input type="radio" name="gender" id="gender_X" value="2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            不公開
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label>學歷:</label>
+                    <select class="edu" aria-label="Default select example" name="edu" id="edu">
+                        <option selected>最高學歷</option>
+                        <option value="PhD">博士</option>
+                        <option value="Master">碩士</option>
+                        <option value="Bachelor">學士</option>
+                        <option value="Senior">高中</option>
+                        <option value="Junior">國中</option>
+                        <option value="Elementary">國小</option>
+                    </select>
+                </div>
+                <div>
+                    <label>興趣:</label>
+                    <div class="check">
+                        <input type="checkbox" value="ball" id="flexCheckDefault" name="hobby[]">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            打球
+                        </label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" value="running" id="running" name="hobby[]">
+                        <label class="form-check-label" for="running">
+                            跑步
+                        </label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" value="swim" id="swim" name="hobby[]">
+                        <label class="form-check-label" for="swim">
+                            游泳
+                        </label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" value="sing" id="sing" name="hobby[]">
+                        <label class="form-check-label" for="sing">
+                            唱歌
+                        </label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" value="other" id="other" name="hobby[]">
+                        <label class="form-check-label" for="other">
+                            其他
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="btn" onclick="modifyMember()">填好送出</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

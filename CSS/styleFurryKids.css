@@ -1,0 +1,123 @@
+/* 設定container_2樣式 */
+#container_2 {
+    width: 90%;
+    margin: 0 auto;
+    /* 左右置中 */
+}
+
+/* 設定content_2樣式 */
+.content_2 {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 0.625rem;
+}
+
+.content_2:nth-child(odd) {
+    background: var(--brown);
+}
+
+.content_2:nth-child(even) {
+    background: var(--silver);
+}
+
+/* 設定左右的container樣式 */
+.column-66 {
+    float: left;
+}
+
+.column-66 p {
+    margin-top: 10px;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.column-66 a {
+    color: var(--white);
+}
+
+.column-33 {
+    float: right;
+}
+
+/* 設定row_2 */
+.row_2 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 設定content_2裡面的按鈕 */
+.content_2:nth-child(odd) button {
+    background: var(--darkblue);
+    border: 0;
+    padding: 0.625rem 1rem;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 1rem;
+    float: right;
+}
+
+.content_2:nth-child(even) button {
+    background: var(--darkbrown);
+    border: 0;
+    padding: 0.625rem 1rem;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 1rem;
+    margin: 10px auto;
+}
+
+/* 設定內文 */
+h1 {
+    font-size: 2.1875rem;
+    margin: 8px auto;
+}
+
+b {
+    color: var(--darkblue);
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 自訂樣式 */
+.brown_p {
+    color: var(--darkbrown);
+}
+
+.brown_bg {
+    background-color: var(--darkbrown) !important;
+}
+
+/* 連結內的樣式設定 */
+.pet {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.pet img {
+    width: 300px;
+    height: 430px;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+.iframe {
+    width: 300px;
+    height: 300px;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+.pic {
+    width: 300px;
+    height: 430px;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}

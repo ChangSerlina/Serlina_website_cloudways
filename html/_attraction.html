@@ -1,0 +1,143 @@
+<!-- 本頁面的樣式 -->
+<link rel="stylesheet" href="CSS/styleCountry.css">
+
+<!-- 本頁面的js -->
+<script src="js/country.js"></script>
+
+<!-- 頁簽/選單 -->
+<div class="topRight a" id="a_nav">
+    <a href="index.php" title="首頁">首頁</a>
+    <a class="active" title="旅遊景點">旅遊景點</a>
+    <a href="basicdb.php" title="旅遊規劃">旅遊規劃</a>
+    <a href="furrykids.php" title="毛小孩">毛小孩</a>
+    <!-- <a href="Shop.html" title="商店">商店</a> -->
+    <a href="parking.php" title="停車費查詢">停車費查詢</a>
+    <a href="contact.php" title="聯絡我們">聯絡我們</a>
+</div>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <img src="images/Icon/menu.png" alt="選單" width="70%">
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- header end -->
+
+<!-- 內容區 -->
+<!-- 麵包屑 -->
+<div class="container_nav">
+    <div class="nav_row">
+        <div class="col-2 col-sm-12">
+            <p><a href="index.php" title="回首頁">首頁</a> / 旅遊景點</p>
+        </div>
+    </div>
+
+    <!-- 導覽，大銀幕時隱藏 -->
+    <div class="nav_row2 ">
+        <ul>
+            <li id="2023_n"><a href="#tab1_3" onclick="mya1_3()">2023</a></li>
+            <li id="2021_n"><a href="#tab1_2" onclick="mya1_2()">2021</a></li>
+            <li id="2019_n"><a href="#tab1" onclick="mya1_1()">2019</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 內文 start -->
+<div class="country">
+    <div class="left col-4">
+        <ul>
+            <li id="2023" onclick="mya1_3()" style="cursor: pointer;">2023
+                <a href="#tab1_3">台南玉井</a>
+            </li>
+            <li id="2021" onclick="mya1_2()" style="cursor: pointer;">2021
+                <a href="#tab1_2">花蓮富里</a>
+            </li>
+            <li id="2019" onclick="mya1_1()" style="cursor: pointer;">2019
+                <a href="#tab1" onclick="mya1()">新加坡</a>
+                <a href="#tab2" onclick="mya2()">環球影城</a>
+                <a href="#tab3" onclick="mya3()">馬來西亞</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 內文2023 start -->
+    <div class="right col-4 col-sm-9" id="country_2023" style="display: block;">
+        <!-- 標籤 tabs -->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="tab1_3" onclick="myc1()">台南玉井</a>
+            </li>
+        </ul>
+        <!-- 標籤 tabs end -->
+        <!-- 內文 start -->
+        <div id="c1" style="display: inherit;"> <!-- 預設展示方式為繼承，與父層相同 -->
+            <h2>台南 玉井</h2>
+            <img src="images/Country/camping_2023.jpg" alt="Taiwan Tainan Yujing 台灣 台南 玉井">
+            <p>
+                在這片綠意盎然的露營區，我感受到了樹木的擁抱和清新空氣的拂面。被陽光喚醒的清晨，伴隨著自然的風景畫布、享受著悠閒的早餐，讓我感受到大自然的美妙。玉井露營還提供了多樣的戶外活動，如健行、河川活動等，增添了冒險的樂趣。最令人難忘的是和家人朋友共度的歡笑時光，這趟玉井露營之旅不僅滿足了我的自然探險慾望，更讓我與親友之間的情誼更為深厚。
+            </p>
+        </div>
+    </div>
+    <!-- 內文2023 end -->
+
+    <!-- 內文2021 start --> <!-- 預設隱藏 -->
+    <div class="right col-4 col-sm-9" id="country_2021" style="display: none;">
+        <!-- 標籤 tabs -->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="tab1_2" onclick="myb1()">花蓮富里</a>
+            </li>
+        </ul>
+        <!-- 標籤 tabs end -->
+        <!-- 內文 start -->
+        <div id="b1" style="display: inherit;"> <!-- 預設展示方式為繼承，與父層相同 -->
+            <h2>花蓮 富里</h2>
+            <img src="images/Country/hualien_2021.jpg" alt="Taiwan Hualien Fuli 台灣 花蓮 富里">
+            <p>
+                隨著窗外風景逐漸遠離都市喧囂，我感受到了大自然的恩賜、清新的空氣、悠閒的步調，讓身心靈得到極大的放鬆。富里的部落文化也深深吸引著我，傳統的手工藝品、原住民的歌舞，展現了豐富的文化底蘊。這趟富里之旅是對心靈的洗禮，也讓我對於大自然和原住民文化充滿了敬畏與感激。
+            </p>
+        </div>
+    </div>
+    <!-- 內文2021 end -->
+
+    <!-- 內文2019 start --> <!-- 預設隱藏 -->
+    <div class="right col-4 col-sm-9" id="country_2019" style="display: none;">
+        <!-- 標籤 tabs -->
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#" id="tab1" onclick="mya1()">新加坡</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="tab2" onclick="mya2()">環球影城</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="tab3" onclick="mya3()">馬來西亞</a>
+            </li>
+        </ul>
+        <!-- 標籤 tabs end -->
+        <!-- 內文 start -->
+        <div id="a1" style="display: inherit;"> <!-- 預設展示方式為繼承，與父層相同 -->
+            <h2>新加坡 佛牙寺龍華院</h2>
+            <img src="images/Country/singapore_2019.jpg" alt="Singapore 新加坡 佛牙寺龍華院">
+            <p>
+                踏足新加坡佛牙寺龍華院，我被其宏偉的金碧輝煌和濃厚的佛教氛圍深深感動。寺廟建築極富歷史價值，仿彿載著千年文明的沉澱。在寺內漫步，感受到一片靜謐祥和，心靈仿若洗滌。寺院內處處都是精美的雕刻和藝術品，每一個角落都流露出對信仰的敬意。這趟心靈之旅讓我不僅學習到關於佛教的深厚知識，更感受到內心靈靜的平和感。
+            </p>
+        </div>
+        <div id="a2" style="display: none;"> <!-- 預設展示方式為隱藏 -->
+            <h2>新加坡 環球影城</h2>
+            <img src="images/Country/universal_city_2019.jpg" alt="Singapore 新加坡 環球影城">
+            <p>
+                新加坡環球影城是一次充滿刺激和歡笑的奇妙冒險之旅。從進入大門那一刻開始，我就被逼真的主題區和令人震撼的遊樂設施所征服。哈利波特的魔法城堡、極速快艇、和令人目不轉睛的演出，每一個節目都超越了預期。這趟環球影城之旅不僅滿足了我的冒險心情，更讓我對電影的奇幻世界充滿敬意，留下了難以忘懷的美好回憶。
+            </p>
+        </div>
+        <div id="a3" style="display: none;"> <!-- 預設展示方式為隱藏 -->
+            <h2>馬來西亞 樂高樂園</h2>
+            <img src="images/Country/malaysia_2019.jpg" alt="Malaysia 馬來西亞 樂高樂園">
+            <p>
+                一踏入樂高樂園的大門，我就仿彿進入了一個充滿童話和創意的世界。
+                令我驚嘆的是其精心打造的主題區域，每一個區域都有獨特的主題，包括城堡、太空、冒險等，每個主題都展現了樂高積木的多樣應用和創意設計。漫步於城堡區域，仿佛進入了一個樂高童話王國，處處都是巨大的樂高構築，充滿著古老城堡的神秘氛圍。
+            </p>
+        </div>
+    </div>
+    <!-- 內文2019 end -->
+</div>
