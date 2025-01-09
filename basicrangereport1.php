@@ -18,10 +18,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             <?php
             $start = $_GET['tstart'];
             $end = $_GET['tend'];
-            $mysqli = new mysqli("db", "serlina", "serlina", "theorydb1");
-            $mysqli->query("SET NAMES 'UTF8' ");
+            require_once('./lib/db_lib.php');     //mysql連線
+            $db = new Database();
             $sql = "select * from plan where 行程 >= '" . $start . "' and 行程 <= '" . $end."' ";
-            $result = $mysqli->query($sql);
+            $result = $db->query($sql);
             $rows = mysqli_num_rows($result);
             $fields = mysqli_num_fields($result);
 
@@ -43,7 +43,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             }
 
             $result->close();
-            $mysqli->close();
+            $db->close();
             ?>
         </table>
     </body>

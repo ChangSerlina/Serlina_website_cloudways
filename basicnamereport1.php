@@ -17,10 +17,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         <table border="0" width="900">
             <?php
             $name = $_GET['tname'];
-            $mysqli = new mysqli("db", "serlina", "serlina", "theorydb1");
-            $mysqli->query("SET NAMES 'UTF8' ");
+            require_once('./lib/db_lib.php');     //mysql連線
+            $db = new Database();
             $sql = "select * from plan where 出發點 = '" . $name . "' ";
-            $result = $mysqli->query($sql);
+            $result = $db->query($sql);
             $rows = mysqli_num_rows($result);
             $fields = mysqli_num_fields($result);
 
@@ -42,7 +42,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             }
 
             $result->close();
-            $mysqli->close();
+            $db->close();
             ?>
         </table>
     </body>

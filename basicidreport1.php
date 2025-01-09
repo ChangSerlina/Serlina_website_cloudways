@@ -17,8 +17,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         <table border="0" width="900">
             <?php
             $id = $_GET['tid'];
-            $mysqli = new mysqli("db", "serlina", "serlina", "theorydb1");
-            $mysqli->query("SET NAMES 'UTF8' ");
+            require_once('./lib/db_lib.php');     //mysql連線
+            $db = new Database();
             $sql = "select * from plan where 行程 = '" . $id . "' ";
             $result = $mysqli->query($sql);
             $rows = mysqli_num_rows($result);
@@ -42,7 +42,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             }
 
             $result->close();
-            $mysqli->close();
+            $db->close();
             ?>
         </table>
     </body>

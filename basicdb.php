@@ -9,17 +9,10 @@ use tpl\Tpl;
 include_once('tpl.class.php');
 $tpl = new Tpl(__DIR__ . '/html');
 
+require_once('./lib/db_lib.php');     //mysql連線
+$db = new Database();
+
 session_start();
-
-/**
- * mysql連線
- */
-// 部署
-// $mysqli = new mysqli("db", "serlina", "serlina", "theorydb1");
-// 測試
-$mysqli = new mysqli("localhost", "serlina", "serlina", "theorydb1");
-
-$mysqli->query("SET NAMES 'UTF8' ");
 
 $id = "";
 $name = "";
@@ -59,7 +52,7 @@ if (isset($_POST['s1'])) {
     $sql = "select * from plan";
 }
 
-$result = $mysqli->query($sql);
+$result = $db->query($sql);
 $rows = mysqli_num_rows($result);
 $fields = mysqli_num_fields($result);
 
@@ -94,7 +87,7 @@ while ($row = mysqli_fetch_row($result)) {     //取得所有記錄列
 if (isset($_POST['s3'])) {
     $iid = $_POST['qt1'];
     if ($iid != "") {
-        $result = checkid($mysqli, $iid);
+        $result = checkid($db, $iid);
         //                        echo $result;
         if ($result == 0) {
             $iname = $_POST['qt2'];
@@ -102,7 +95,7 @@ if (isset($_POST['s3'])) {
             $iblood = $_POST['qt4'];
             $ischool = $_POST['qt5'];
             $sql = "insert into plan value( '" . $iid . "' , '" . $iname . "' , '" . $ibirth . "' , '" . $iblood . "' , '" . $ischool . "' )";
-            modifydata($mysqli, $sql);    //新增、刪除、修改都共用一個函數就可以了 (因為差別在sql指令)
+            modifydata($db, $sql);    //新增、刪除、修改都共用一個函數就可以了 (因為差別在sql指令)
         } else {
             echo "<script>alert('此筆資料已存在---不可以新增')</script>";
         }
@@ -118,7 +111,7 @@ if (isset($_POST['s4'])) {
         echo "<script>alert('請先進行查詢')</script>";
     } else {
         $sql = "delete from plan where 編號='" . $did . "';";
-        modifydata($mysqli, $sql);    //新增、刪除、修改都共用一個函數就可以了 (因為差別在sql指令)
+        modifydata($db, $sql);    //新增、刪除、修改都共用一個函數就可以了 (因為差別在sql指令)
     }
 }
 
@@ -133,7 +126,7 @@ if (isset($_POST['s5'])) {
         $iblood = $_POST['qt4'];
         $ischool = $_POST['qt5'];
         $sql = "update plan set 出發點='" . $iname . "' , 目的地= '" . $ibirth . "' , 預計天數= '" . $iblood . "' , 沿途景點= '" . $ischool . "' where 行程= '" . $did . "';";
-        modifydata($mysqli, $sql);    //新增、刪除、修改都共用一個函數就可以了 (因為差別在sql指令)
+        modifydata($db, $sql);    //新增、刪除、修改都共用一個函數就可以了 (因為差別在sql指令)
     }
 }
 
@@ -143,10 +136,10 @@ if (isset($_POST['s6'])) {
     echo "<script>location.href='./basicdb.php';</script>";
 }
 
-function checkid($mysqli, $id)
+function checkid($db, $id)
 {
     $sql = "select * from plan where 行程 = '" . $id . "' ";
-    $result = $mysqli->query($sql);
+    $result = $db->query($sql);
     $rows = mysqli_num_rows($result);
     // echo "count: " . $rows;
     if ($rows != 0) {
@@ -156,15 +149,15 @@ function checkid($mysqli, $id)
     }
 }
 
-function modifydata($mysqli, $sql)
+function modifydata($db, $sql)
 {
-    $mysqli->query($sql);
+    $db->query($sql);
     // header("Location:basicdb.php");                  //                        轉向指令
     echo "<script>location.href='./basicdb.php';</script>";
 }
 
 $result->close();
-$mysqli->close();
+$db->close();
 
 $variables = [
     'id'        => $id,
