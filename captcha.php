@@ -21,8 +21,14 @@ function create_captcha($str, $width = 300, $height = 150){
         imagesetpixel($image, rand(0, $width), rand(0, $height), rand_color($image));
     }
 
+    /**
+     * 查詢 linux 系統字體
+     */
+    // exec("fc-list | grep -i dejavu")
+    
     // 設置字體文件路徑
-    $font = 'fa-solid-900.ttf'; // 請確保這裡的路徑正確
+    // $font = 'fa-solid-900.ttf'; // 請確保這裡的路徑正確
+    $font =  "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf";
 
     if (!file_exists($font)) {
         die("Font file not found.");
