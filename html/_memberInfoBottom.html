@@ -2,24 +2,24 @@
     <div class="data_1">
         <div class="data_2 col-6 col-sm-12">
             <label style="margin-right:1rem">會員 id </label>
-            <input type="text" id="qt1" name="qt1" size="25" value="{{id}}" />
+            <input type="text" id="qt1" name="qt1" size="25" value="{{id}}" disabled />
             </td>
         </div>
         <div class="data_2 col-6 col-sm-12">
             <label style="margin-right:1rem">會員帳號 </label>
-            <input type="text" id="qt2" name="qt2" size="25" value="{{account}}" />
+            <input type="text" id="qt2" name="qt2" size="25" value="{{account}}" disabled />
             </td>
         </div>
-        <div class="data_2 col-6 col-sm-12">
-            <label style="margin-right:1rem">會員姓名 </label>
-            <input type="text" id="qt3" name="qt3" size="25" value="{{name}}" />
-        </div>
-        <div class="data_2 col-6 col-sm-12">
+        <div class="data_2 col-6 col-sm-12" style="display: none;">
             <label style="margin-right:1rem">會員權限 </label>
-            <input type="text" id="qt4" name="qt4" size="25" value="{{permission}}" />
+            <input type="text" id="qt4" name="qt4" size="25" value="{{permission}}" disabled />
         </div>
     </div>
     <div class="data_1">
+        <div class="data_2 col-6 col-sm-12">
+            <label style="margin-right:1rem">姓名 </label>
+            <input type="text" id="qt3" name="qt3" size="25" value="{{name}}" />
+        </div>
         <div class="data_2 col-6 col-sm-12">
             <label style="margin-right:1rem">生日 </label>
             <input type="text" id="qt5" name="qt5" size="25" value="{{birthday}}" />

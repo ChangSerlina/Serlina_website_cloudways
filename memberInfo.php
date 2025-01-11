@@ -75,10 +75,10 @@ $variables = [
 ];
 
 // 沒有權限的會員
-if ($permission == "無") {
-    echo $tpl->render('/error.html');
-    echo "<script>document.getElementById('errorMessage').innerHTML = 'Oh! 您似乎沒有任何權限，請與管理員接洽，謝謝'; </script>";
-    exit();
+if ($permission == "讀取") {
+    echo $tpl->render('/_memberInfoTop.html');
+    echo "<div>";
+    echo $tpl->render('/_memberInfoBottom.html', $variables);
 }
 
 // 有特定權限的會員
