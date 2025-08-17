@@ -18,9 +18,6 @@
             </small>
         </div>
     </div>
-    <div class="Go_top">
-        <span id="Gotop"><span>&uarr;</span><a href="#top" title="回到最上方">Go to top</a></span>
-    </div>
 </div>
 
 <!-- 上方的Modal-會員註冊 -->
@@ -63,6 +60,26 @@
         </div>
     </div>
 </div>
+
+<!-- Floating chat icon -->
+<div class="chat-icon" id="chatIcon"><i class="fa-brands fa-rocketchat"></i></div>
+
+<!-- Chat region -->
+<div class="chat-region closed" id="chatRegion">
+    <div class="chat-header">
+        <h2>聊天</h2>
+        <button id="closeChatBtn">Close</button>
+    </div>
+    <div class="messages-container" id="messagesContainer"></div>
+    <form class="chat-form" id="chatForm">
+        <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<!-- Marked library for markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/index_chat.js"></script>
 
 <script>
     //顯示or隱藏密碼

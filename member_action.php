@@ -87,10 +87,12 @@ switch ($action) {
         $storedHashedPassword   = $result["password"];
         $user                   = $result["name"];
         $uuid                   = $result["uuid"];
+        $account                = $result["account"];
 
         if (password_verify($passwd, $storedHashedPassword)) {
             $_SESSION["user"] = $user;
             $_SESSION["uuid"] = $uuid;
+            $_SESSION["account"] = $account;
             echo "登入成功";
         } else {
             echo "登入失敗";

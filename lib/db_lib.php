@@ -82,6 +82,58 @@ class Database
         return $row;
     }
 
+    function updateMemberInfo($account, $is_delete = 0, $userName = "",$permission="", $formatterDate = "", $gender = "", $education = "", $hobby = "")
+    {
+        // 刪除會員
+        if ($is_delete == 1) {
+            $stmt = $this->prepare("UPDATE member SET `is_delete` = 1 WHERE (`account` = ?)");
+            if (!$stmt) {
+                echo "failed";  //刪除會員失敗
+                error_log("Delete member => " . $account . " failed");
+                return false;
+            } else {
+                $stmt->bind_param("s", $account);
+                $stmt->execute();
+                $stmt->close();
+                return true;
+            }
+        }
+
+        // 修改會員權限
+        if(isset($permission) && $permission != "") {
+            $stmt = $this->prepare("UPDATE member SET `name` = ?, `permission` = ? WHERE (`account` = ?)");
+            if (!$stmt) {
+                echo "failed";  //修改權限失敗
+                error_log("Permission member => " . $account . " failed");
+                return false;
+            } else {
+                $stmt->bind_param("sss", $userName,$permission,$account);
+                $stmt->execute();
+                $stmt->close();
+                return true;
+            }
+        }
+
+        // 修改會員資料
+        // 處理hobby陣列
+        if (is_array($hobby)) {
+            $hobbyArray = implode(',', $hobby);
+        }
+
+        $stmt = $this->prepare("UPDATE member SET `name` = ?, `birthday` = ?, `gender` = ?, `education` = ?, `hobby` = ? WHERE (`account` = ?)");
+
+        if (!$stmt) {
+            echo "failed";  //修改會員資料失敗
+            error_log("Modify member => " . $account . " failed");
+            return false;
+        } else {
+            $stmt->bind_param("ssssss", $userName, $formatterDate, $gender, $education, $hobbyArray, $account);
+            $stmt->execute();
+            $stmt->close();
+            return true;
+        }
+    }
+
     // 資料庫斷開連接
     public function close()
     {
